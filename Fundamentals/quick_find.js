@@ -20,7 +20,7 @@ var QuickFind = (function(arrLength) {
 		}
 	};
 
-	var find = function find(p) {
+	var root = function root(p) {
 		return arr[p];
 	};
 
@@ -34,7 +34,7 @@ var QuickFind = (function(arrLength) {
 
 	return {
 		union: union,
-		find: find,
+		root: root,
 		connected: connected,
 		print: print
 	};

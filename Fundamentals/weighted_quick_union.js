@@ -10,8 +10,8 @@ var WeightedQuickUnion = (function(arrLength) {
 	}
 
 	var union = function union(p, q) {
-		var rootP = find(p),
-		    rootQ = find(q);
+		var rootP = root(p),
+		    rootQ = root(q);
 
 		if(rootP !== rootQ) {
 			if(sizes[rootP] <= sizes[rootQ]) {
@@ -25,7 +25,7 @@ var WeightedQuickUnion = (function(arrLength) {
 		}
 	};
 
-	var find = function find(p) {
+	var root = function root(p) {
 		while(p !== arr[p]) {
 			p = arr[p];
 		}
@@ -33,7 +33,7 @@ var WeightedQuickUnion = (function(arrLength) {
 	};
 
 	var connected = function connected(p, q) {
-		return find(p) === find(q);
+		return root(p) === root(q);
 	};
 
 	var print = function print() {
@@ -43,7 +43,7 @@ var WeightedQuickUnion = (function(arrLength) {
 
 	return {
 		union: union,
-		find: find,
+		root: root,
 		connected: connected,
 		print: print
 	};
