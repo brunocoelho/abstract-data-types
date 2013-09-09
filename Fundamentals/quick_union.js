@@ -1,43 +1,40 @@
-var QuickUnion = (function(arrLength) {
+var QuickUnion = function QuickUnion(arrLength) {
 
-	var arr = [],
-	    i = 0;
+    this.arr = [];
 
-	for(; i < arrLength; i += 1) {
-		arr[i] = i;
-	}
+    var i = 0;
 
-	var union = function union(p, q) {
-		var rootP = root(p),
-		    rootQ = root(q);
+    for(; i < arrLength; i += 1) {
+        this.arr[i] = i;
+    }
+};
 
-		if(rootP !== rootQ) {
-			arr[rootP] = rootQ;
-		}
-	};
+QuickUnion.prototype = {
 
-	var root = function root(p) {
-		while(p !== arr[p]) {
-			p = arr[p];
-		}
-		return p;
-	};
+    union: function union(p, q) {
+        var rootP = this.root(p),
+            rootQ = this.root(q);
 
-	var connected = function connected(p, q) {
-		return root(p) === root(q);
-	};
+        if(rootP !== rootQ) {
+            this.arr[rootP] = rootQ;
+        }
+    },
 
-	var print = function print() {
-		console.log(arr);
-	};
+    root: function root(p) {
+        while(p !== this.arr[p]) {
+            p = this.arr[p];
+        }
+        return p;
+    },
 
-	return {
-		union: union,
-		root: root,
-		connected: connected,
-		print: print
-	};
-}(10));
+    connected: function connected(p, q) {
+        return this.root(p) === this.root(q);
+    },
+
+    print: function print() {
+        console.log(this.arr);
+    }
+};
 
 QuickUnion.union(1,2); // [0, 2, 2, 3, 4, 5, 6, 7, 8, 9]
 QuickUnion.union(2,3); // [0, 2, 3, 3, 4, 5, 6, 7, 8, 9]
