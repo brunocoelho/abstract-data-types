@@ -3,16 +3,18 @@ var Node = function Node(value) {
     this.next = null;
 };
 
+// List type FIFO. Same as Queue.
 var LinkedList = function LinkedList() {
     this.size = 0;
     this.first = null;
+    this.last = null;
 };
 
 LinkedList.prototype =  {
     // Removes an item at the beginning of the list.
     pop: function() {
         if (this.size === 0) {
-          //throw { 'Nothing in the Queue to pop' };
+          console.log('Nothing in the list to pop');
         }
 
         var oldFirst = this.first;
@@ -23,18 +25,22 @@ LinkedList.prototype =  {
     },
 
     // Adds an item to the end of the list.
-    push: function(node) {
-        var temp;
+    push: function(value) {
+        var node = new Node(value);
 
         if (this.first === null) {
             this.first = node;
+            this.last = node;
         }
         else {
-            temp = this.first;
-            while (temp.next !== null) {
-              temp = temp.next;
+            if (this.first.next === null) {
+              this.last = node;
+              this.first.next = this.last;
             }
-            temp.next = node;
+            else {
+              this.last.next = node;
+              this.last = node;
+            }
         }
         this.size += 1;
     },
