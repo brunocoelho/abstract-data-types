@@ -13,11 +13,13 @@ var LinkedList = function LinkedList() {
 LinkedList.prototype =  {
     // Removes an item at the beginning of the list.
     pop: function() {
+        var oldFist;
+
         if (this.size === 0) {
-          console.log('Nothing in the list to pop');
+            console.log('Nothing in the list to pop');
         }
 
-        var oldFirst = this.first;
+        oldFirst = this.first;
         this.first = this.first.next;
 
         this.size -= 1;
@@ -34,12 +36,12 @@ LinkedList.prototype =  {
         }
         else {
             if (this.first.next === null) {
-              this.last = node;
-              this.first.next = this.last;
+                this.last = node;
+                this.first.next = this.last;
             }
             else {
-              this.last.next = node;
-              this.last = node;
+                this.last.next = node;
+                this.last = node;
             }
         }
         this.size += 1;
