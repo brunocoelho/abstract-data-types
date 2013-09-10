@@ -1,4 +1,4 @@
-var QuickUnion = function QuickUnion(arrLength) {
+function QuickUnion(arrLength) {
 
     this.arr = [];
 
@@ -7,7 +7,7 @@ var QuickUnion = function QuickUnion(arrLength) {
     for(; i < arrLength; i += 1) {
         this.arr[i] = i;
     }
-};
+}
 
 QuickUnion.prototype = {
 

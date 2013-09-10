@@ -1,4 +1,4 @@
-var QuickFind = function QuickFind(arrLength) {
+function QuickFind(arrLength) {
 
     this.arr = [];
     this.arrLength = arrLength;
@@ -8,7 +8,7 @@ var QuickFind = function QuickFind(arrLength) {
     for(; i < this.arrLength; i += 1) {
         this.arr[i] = i;
     }
-};
+}
 
 QuickFind.prototype = {
     union: function union(p, q) {

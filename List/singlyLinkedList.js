@@ -1,14 +1,14 @@
-var Node = function Node(value) {
+function Node(value) {
     this.value = value;
     this.next = null;
-};
+}
 
 // List type FIFO. Same as Queue.
-var LinkedList = function LinkedList() {
+function LinkedList() {
     this.size = 0;
     this.first = null;
     this.last = null;
-};
+}
 
 LinkedList.prototype =  {
     // Removes an item at the beginning of the list.

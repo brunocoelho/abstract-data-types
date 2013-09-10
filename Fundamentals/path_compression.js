@@ -1,4 +1,4 @@
-var PathCompression = function PathCompression(arrLength) {
+function PathCompression(arrLength) {
 
     this.arr = [];
     this.sizes = [];
@@ -9,7 +9,7 @@ var PathCompression = function PathCompression(arrLength) {
         this.arr[i] = i;
         this.sizes[i] = 1;
     }
-};
+}
 
 PathCompression.prototype = {
 

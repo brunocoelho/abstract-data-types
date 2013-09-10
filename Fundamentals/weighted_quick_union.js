@@ -1,4 +1,4 @@
-var WeightedQuickUnion = function WeightedQuickUnion(arrLength) {
+function WeightedQuickUnion(arrLength) {
 
     this.arrLength = arrLength;
     this.arr = [];
@@ -10,7 +10,7 @@ var WeightedQuickUnion = function WeightedQuickUnion(arrLength) {
         this.arr[i] = i;
         this.sizes[i] = 1;
     }
-};
+}
 
 WeightedQuickUnion.prototype = {
 
