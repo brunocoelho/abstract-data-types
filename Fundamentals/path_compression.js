@@ -1,56 +1,54 @@
-var PathCompression = (function(arrLength) {
+var PathCompression = function PathCompression(arrLength) {
 
-	var arr = [],
-      sizes = [],
-	    i = 0;
+    this.arr = [];
+    this.sizes = [];
 
-	for(; i < arrLength; i += 1) {
-		arr[i] = i;
-    sizes[i] = 1;
-	}
+    var i = 0;
 
-	var union = function union(p, q) {
-		var rootP = root(p),
-		    rootQ = root(q);
+    for(; i < arrLength; i += 1) {
+        this.arr[i] = i;
+        this.sizes[i] = 1;
+    }
+};
 
-		if(rootP !== rootQ) {
-			if(sizes[rootP] <= sizes[rootQ]) {
-        arr[rootP] = rootQ;
-        sizes[rootQ] += sizes[rootP];
-      }
-      else {
-        arr[rootQ] = rootP;
-        sizes[rootP] += sizes[rootQ];
-      }
-		}
-	};
+PathCompression.prototype = {
 
-	var root = function root(p) {
-		while(p !== arr[p]) {
-      arr[p] = arr[arr[p]];
-			p = arr[p];
-		}
-		return p;
-	};
+    union: function union(p, q) {
+        var rootP = this.root(p),
+            rootQ = this.root(q);
 
-	var connected = function connected(p, q) {
-		return root(p) === root(q);
-	};
+        if(rootP !== rootQ) {
+            if(this.sizes[rootP] <= this.sizes[rootQ]) {
+                this.arr[rootP] = rootQ;
+                this.sizes[rootQ] += this.sizes[rootP];
+            }
+            else {
+                this.arr[rootQ] = rootP;
+                this.sizes[rootP] += this.sizes[rootQ];
+            }
+        }
+    },
 
-	var print = function print() {
-		console.log("Arr: " + arr);
-	};
+    root: function root(p) {
+        while(p !== this.arr[p]) {
+            this.arr[p] = this.arr[arr[p]];
+            p = this.arr[p];
+        }
+        return p;
+    },
 
-	return {
-		union: union,
-		root: root,
-		connected: connected,
-		print: print
-	};
-}(10));
+    connected: function connected(p, q) {
+        return this.root(p) === this.root(q);
+    },
 
-PathCompression.union(1, 2); // [0, 2, 2, 3, 4, 5, 6, 7, 8, 9]
-PathCompression.union(2, 3); // [0, 2, 2, 2, 4, 5, 6, 7, 8, 9]
-PathCompression.union(8, 9); // [0, 2, 2, 2, 4, 5, 6, 7, 9, 9]
-PathCompression.union(5, 2); // [0, 2, 2, 2, 4, 2, 6, 7, 9, 9]
+    print: function print() {
+        console.log('Arr: ' + this.arr);
+    }
+};
+
+var p = new PathCompression(10);
+p.union(1, 2); // [0, 2, 2, 3, 4, 5, 6, 7, 8, 9]
+p.union(2, 3); // [0, 2, 2, 2, 4, 5, 6, 7, 8, 9]
+p.union(8, 9); // [0, 2, 2, 2, 4, 5, 6, 7, 9, 9]
+p.union(5, 2); // [0, 2, 2, 2, 4, 2, 6, 7, 9, 9]
 

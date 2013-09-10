@@ -1,48 +1,47 @@
-var QuickFind = (function(arrLength) {
+var QuickFind = function QuickFind(arrLength) {
 
-  var arr = [],
-      i = 0;
+    this.arr = [];
+    this.arrLength = arrLength;
 
-	for(; i < arrLength; i += 1) {
-		arr[i] = i;
-	}
+    var i = 0;
 
-	var union = function union(p, q) {
-		var pid = arr[p],
-		    i = 0;
+    for(; i < this.arrLength; i += 1) {
+        this.arr[i] = i;
+    }
+};
 
-		if(!connected(p, q)) {
-			for(; i < arrLength; i += 1) {
-				if (arr[i] === pid) {
-					arr[i] = arr[q];
-				}
-			}
-		}
-	};
+QuickFind.prototype = {
+    union: function union(p, q) {
+        var pid = this.arr[p],
+            i = 0;
 
-	var root = function root(p) {
-		return arr[p];
-	};
+        if(!this.connected(p, q)) {
+            for(; i < this.arrLength; i += 1) {
+                if (this.arr[i] === pid) {
+                  this.arr[i] = this.arr[q];
+                }
+            }
+        }
+    },
 
-	var connected = function connected(p, q) {
-		return arr[p] === arr[q];
-	};
+    root: function root(p) {
+        return this.arr[p];
+    },
 
-	var print = function print() {
-		console.log(arr);
-	};
+    connected: function connected(p, q) {
+        return this.arr[p] === this.arr[q];
+    },
 
-	return {
-		union: union,
-		root: root,
-		connected: connected,
-		print: print
-	};
-}(10));
+    print: function print() {
+        console.log(this.arr);
+    }
+};
 
-QuickFind.print();        // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-QuickFind.union(4, 3);    // [0, 1, 2, 3, 3, 5, 6, 7, 8, 9]
-QuickFind.connected(4,3); // true
-QuickFind.connected(4,2); // false
-QuickFind.union(6, 1);    // [0, 1, 2, 3, 3, 5, 1, 7, 8, 9]
+var q = new QuickFind(10);
+
+q.print();        // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+q.union(4, 3);    // [0, 1, 2, 3, 3, 5, 6, 7, 8, 9]
+q.connected(4,3); // true
+q.connected(4,2); // false
+q.union(6, 1);    // [0, 1, 2, 3, 3, 5, 1, 7, 8, 9]
 
