@@ -4,16 +4,16 @@ function Node(value) {
 }
 
 // List type FIFO. Same as Queue.
-function LinkedList() {
+function SinglyLinkedList() {
     this.size = 0;
     this.first = null;
     this.last = null;
 }
 
-LinkedList.prototype =  {
+SinglyLinkedList.prototype =  {
     // Removes an item at the beginning of the list.
     pop: function() {
-        var oldFist;
+        var oldFirst;
 
         if (this.size === 0) {
             console.log('Nothing in the list to pop');
