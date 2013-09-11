@@ -3,7 +3,7 @@ Some common Abstract Data Structures.
 | Data Structure         | Status        |
 | ---------------------- |:-------------:|
 | Singly Linked List     | Finished      |
-| Doubly Linked List     | Pending       |
+| Doubly Linked List     | Finished      |
 | Dynamic Array          | Pending       |
 | Queue                  | Finished      |
 | Stack                  | Pending       |
