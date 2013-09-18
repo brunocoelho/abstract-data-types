@@ -47,11 +47,4 @@ WeightedQuickUnion.prototype = {
     }
 };
 
-var w = new WeightedQuickUnion(10);
-
-w.union(1, 2); // [0, 2, 2, 3, 4, 5, 6, 7, 8, 9]
-w.union(2, 3); // [0, 2, 2, 2, 4, 5, 6, 7, 8, 9]
-w.union(8, 9); // [0, 2, 2, 2, 4, 5, 6, 7, 9, 9]
-w.union(5, 2); // [0, 2, 2, 2, 4, 2, 6, 7, 9, 9]
-w.connected(8, 9); // true
-
+module.exports = WeightedQuickUnion

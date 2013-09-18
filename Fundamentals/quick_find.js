@@ -37,11 +37,4 @@ QuickFind.prototype = {
     }
 };
 
-var q = new QuickFind(10);
-
-q.print();        // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-q.union(4, 3);    // [0, 1, 2, 3, 3, 5, 6, 7, 8, 9]
-q.connected(4,3); // true
-q.connected(4,2); // false
-q.union(6, 1);    // [0, 1, 2, 3, 3, 5, 1, 7, 8, 9]
-
+module.exports = QuickFind

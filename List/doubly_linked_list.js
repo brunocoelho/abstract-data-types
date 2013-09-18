@@ -4,7 +4,7 @@ function Node(value) {
     this.prev = null;
 }
 
-// List type FIFO. Same as Queue.
+// List type FIFO, same as Queue.
 function DoublyLinkedList() {
     this.size = 0;
     this.first = null;
@@ -55,3 +55,5 @@ DoublyLinkedList.prototype =  {
         return this.first === null;
     }
 };
+
+module.exports = DoublyLinkedList

@@ -3,7 +3,7 @@ function Node(value) {
     this.next = null;
 }
 
-// List type FIFO. Same as Queue.
+// List type FIFO, same as Queue.
 function SinglyLinkedList() {
     this.size = 0;
     this.first = null;
@@ -52,3 +52,4 @@ SinglyLinkedList.prototype =  {
     }
 };
 
+module.exports = SinglyLinkedList

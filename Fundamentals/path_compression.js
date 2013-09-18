@@ -46,9 +46,4 @@ PathCompression.prototype = {
     }
 };
 
-var p = new PathCompression(10);
-p.union(1, 2); // [0, 2, 2, 3, 4, 5, 6, 7, 8, 9]
-p.union(2, 3); // [0, 2, 2, 2, 4, 5, 6, 7, 8, 9]
-p.union(8, 9); // [0, 2, 2, 2, 4, 5, 6, 7, 9, 9]
-p.union(5, 2); // [0, 2, 2, 2, 4, 2, 6, 7, 9, 9]
-
+module.exports = PathCompression
