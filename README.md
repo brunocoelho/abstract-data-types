@@ -33,3 +33,7 @@ Some common Abstract Data Structures.
 | ---------------------- |:-------------:|
 | Binary Search          | Pending       |
 
+## License
+This repository is released under the [MIT License].
+
+[MIT License]: http://opensource.org/licenses/MIT
