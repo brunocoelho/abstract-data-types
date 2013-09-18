@@ -1,0 +1,27 @@
+{
+    "name": "abstract-data-types",
+    "description": "Abstract data types collection.",
+    "version": "0.0.1",
+    "author": {
+        "name": "Bruno Coelho",
+        "email": "bcs.cin@gmail.com",
+        "twitter": "brunocoelho"
+    }
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:brunocoelho/abstract-data-types.git"
+    },
+    "bugs": {
+        "url": "https://github.com/brunocoelho/abstract-data-types/issues"
+    },
+    "keywords": [
+        "algorithms"
+    ],
+    "dependencies": {},
+    "devDependencies": {},
+    "engines": {
+        "node": ">=0.8"
+    },
+    "preferGlobal": "true"
+}
