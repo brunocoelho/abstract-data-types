@@ -19,10 +19,10 @@ Some common Abstract Data Structures.
 
 | Algorithm              | Status        |
 | ---------------------- |:-------------:|
-| Insertion sort         | Pending       |
-| Bubble sort            | Pending       |
-| Selection sort         | Pending       |
+| Selection sort         | Finished      |
+| Insertion sort         | Finished      |
 | Shellsort              | Pending       |
+| Bubble sort            | Pending       |
 | Quicksort              | Pending       |
 | Mergesort              | Pending       |
 | Convex Hull            | Pending       |
