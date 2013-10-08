@@ -1,4 +1,4 @@
-function InsertionSort (arr) {
+function InsertionSort(arr) {
 	var i,
 		j,
 		len = arr.length,
@@ -18,6 +18,8 @@ function InsertionSort (arr) {
 	}
 	return arr;
 }
+
+module.exports = InsertionSort;
 
 /*
 
