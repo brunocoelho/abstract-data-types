@@ -26,6 +26,7 @@ Some common Abstract Data Structures.
 | Quicksort              | Pending       |
 | Mergesort              | Pending       |
 | Convex Hull            | Pending       |
+| Shuffling              | Finished      |
 
 ## Searching
 
