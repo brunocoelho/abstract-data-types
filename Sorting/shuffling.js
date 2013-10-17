@@ -1,4 +1,4 @@
-var Shuffling = function(arr) {
+var shuffling = function(arr) {
 	var arrLen = arr.length,
 		i,
 		random,
@@ -14,6 +14,6 @@ var Shuffling = function(arr) {
 	return arr;
 };
 
-module.exports = Shuffling;
+module.exports = shuffling;
 
-// var s = new Shuffling([1,2,3,4,5,6,7,8,9]);
+// console.log(shuffling([1,2,3,4,5,6,7,8,9]));
