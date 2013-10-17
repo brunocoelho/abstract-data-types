@@ -23,7 +23,7 @@ Some common Abstract Data Structures.
 | Insertion sort         | Finished      |
 | Shellsort              | Pending       |
 | Bubble sort            | Pending       |
-| Quicksort              | Pending       |
+| Quicksort              | Finished      |
 | Mergesort              | Finished      |
 | Convex Hull            | Pending       |
 | Shuffling              | Finished      |
