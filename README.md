@@ -8,7 +8,7 @@ Some common Abstract Data Structures.
 | Queue                  | Finished      |
 | Stack                  | Pending       |
 | Min Heap (binary)      | Pending       |
-| Max Heap (binary)      | Pending       |
+| Max Heap (binary)      | Finished      |
 | Binary Search Tree     | Pending       |
 | AVL Tree               | Pending       |
 | Disjoint Set           | Finished      |
